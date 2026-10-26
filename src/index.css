@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --mac-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", system-ui, sans-serif;
+    --mac-font-mono: "SF Mono", "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, monospace;
+  }
+  
+  body {
+    font-family: var(--mac-font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbars like macOS */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 140, 145, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 140, 145, 0.6);
+}
+
+/* Subtle dot grid pattern */
+.canvas-grid-light {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, #D1D1D6 1px, transparent 1px);
+}
+.canvas-grid-dark {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, #333336 1px, transparent 1px);
+}
+
+/* Monospace tabular numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
